@@ -1,10 +1,308 @@
 
-.a{
- border: 1px solid #000;
+
+:root {
+	--color-primario: #3498db;
+	--color-secundario: #2ecc71;
+	--color-acento: #e74c3c;
+	--color-texto: #333;
+	--color-fondo: #f9f9f9;
+	--color-fondo-oscuro: #e0e0e0;
+	--fuente-principal: "Arial", sans-serif;
+	--espaciado-base: 1rem;
+	--ancho-maximo: 1200px;
+	--sombra-box: 0 2px 5px rgba(0, 0, 0, 0.1);
+	--borde-redondeado: 5px;
 }
-.b{
- border: 1px solid #000;
+
+/* Reseteo básico */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-.c{
- border: 1px solid #000;
+
+/* Estilos generales */
+body {
+	font-family: var(--fuente-principal);
+	color: var(--color-texto);
+	background-color: var(--color-fondo);
+	line-height: 1.6;
+	padding: var(--espaciado-base);
+	max-width: var(--ancho-maximo);
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-areas:
+		"encabezado encabezado"
+		"principal lateral"
+		"pie pie";
+	gap: 20px;
+}
+
+/* Encabezado */
+.encabezado {
+	grid-area: encabezado;
+	background-color: var(--color-primario);
+	color: white;
+	padding: calc(var(--espaciado-base) * 2);
+	border-radius: var(--borde-redondeado);
+	margin-bottom: var(--espaciado-base);
+	box-shadow: var(--sombra-box);
+}
+
+.encabezado h1 {
+	text-align: center;
+	margin-bottom: var(--espaciado-base);
+	font-size: 2.5em;
+	/* Uso de función CSS para texto con sombra */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Navegación */
+.menu-navegacion {
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.menu-navegacion li a {
+	color: white;
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	border-radius: var(--borde-redondeado);
+	transition: background-color 0.3s ease;
+	display: inline-block;
+}
+
+.menu-navegacion li a:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenido principal */
+main {
+	grid-area: principal;
+}
+
+.seccion {
+	background-color: white;
+	padding: var(--espaciado-base);
+	margin-bottom: var(--espaciado-base);
+	border-radius: var(--borde-redondeado);
+	box-shadow: var(--sombra-box);
+}
+
+.seccion h2 {
+	color: var(--color-primario);
+	border-bottom: 2px solid var(--color-primario);
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.seccion h3 {
+	color: var(--color-secundario);
+	margin: 1rem 0;
+}
+
+/* Párrafo destacado */
+.destacado {
+	background-color: rgba(46, 204, 113, 0.1);
+	border-left: 4px solid var(--color-secundario);
+	padding: 1rem;
+	margin: 1rem 0;
+	font-weight: bold;
+}
+
+/* Contenedor de imagen */
+.contenedor-imagen {
+	text-align: center;
+	margin: 1rem 0;
+}
+
+.contenedor-imagen img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--borde-redondeado);
+	/* Uso de función CSS para filtros */
+	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}
+
+figcaption {
+	font-style: italic;
+	color: #666;
+	margin-top: 0.5rem;
+}
+
+/* Listas */
+.lista-ordenada,
+.lista-desordenada {
+	margin-left: 2rem;
+	margin-bottom: 1rem;
+}
+
+.lista-ordenada li,
+.lista-desordenada li {
+	margin-bottom: 0.5rem;
+}
+
+.lista-ordenada {
+	counter-reset: mi-contador;
+}
+
+.lista-ordenada li {
+	counter-increment: mi-contador;
+}
+
+.lista-desordenada li::marker {
+	color: var(--color-secundario);
+}
+
+/* Redes sociales */
+.redes-sociales {
+	list-style-type: none;
+	display: flex;
+	gap: 1rem;
+	margin: 1rem 0;
+}
+
+.enlace-externo {
+	color: var(--color-primario);
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.3s ease;
+}
+
+.enlace-externo:hover {
+	color: var(--color-acento);
+	/* Uso de función CSS para transformación */
+	transform: translateY(-2px);
+	display: inline-block;
+}
+
+/* Hack CSS para añadir icono a enlaces externos */
+.enlace-externo::after {
+	content: " ↗";
+	font-size: 0.8em;
+}
+
+/* Barra lateral */
+.barra-lateral {
+	grid-area: lateral;
+	background-color: var(--color-fondo-oscuro);
+	padding: var(--espaciado-base);
+	border-radius: var(--borde-redondeado);
+	align-self: start;
+}
+
+.barra-lateral h3 {
+	color: var(--color-primario);
+	margin-bottom: 1rem;
+}
+
+blockquote {
+	border-left: 3px solid var(--color-primario);
+	padding-left: 1rem;
+	margin: 1rem 0;
+	font-style: italic;
+	color: #555;
+}
+
+blockquote footer {
+	text-align: right;
+	margin-top: 0.5rem;
+}
+
+/* Pie de página */
+.pie-pagina {
+	grid-area: pie;
+	background-color: var(--color-primario);
+	color: white;
+	padding: var(--espaciado-base);
+	text-align: center;
+	border-radius: var(--borde-redondeado);
+	margin-top: var(--espaciado-base);
+}
+
+.pie-pagina a {
+	color: white;
+	text-decoration: underline;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+	body {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"encabezado"
+			"principal"
+			"lateral"
+			"pie";
+	}
+
+	.menu-navegacion {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.redes-sociales {
+		flex-direction: column;
+	}
+}
+
+/* Animaciones y efectos */
+@keyframes destacar {
+	0% {
+		background-color: transparent;
+	}
+	50% {
+		background-color: rgba(231, 76, 60, 0.2);
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+mark {
+	background-color: rgba(231, 76, 60, 0.2);
+	padding: 0 0.2rem;
+	border-radius: 3px;
+	animation: destacar 2s infinite;
+}
+
+/* Selector de atributo */
+[href^="mailto"] {
+	font-weight: bold;
+}
+
+/* Selector de pseudo-elementos y pseudo-clases */
+.seccion p:first-of-type::first-letter {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: var(--color-primario);
+}
+
+/* Uso de :not pseudo-clase */
+.seccion:not(:last-child) {
+	margin-bottom: 2rem;
+}
+
+/* Selector de hermanos adyacentes */
+h2 + p {
+	font-size: 1.1em;
+}
+
+/* Selector de hijos directos */
+.seccion > h2 {
+	text-transform: uppercase;
+}
+
+/* Uso de calc() para cálculos */
+.seccion {
+	min-height: calc(100px + 5vh);
+}
+
+/* Uso de variables CSS con fallback */
+.enlace-interno {
+	color: var(--color-texto-menu, white);
 }

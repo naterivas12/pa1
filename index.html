@@ -1,16 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Kissmark Rivas</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="contenedor">
-    <div class="a">a</div>
-    <div class="b">b</div>
-    <div class="c">c</div>
-  </div>
+  <header class="encabezado">
+    <h1>KISSMARK RIVAS MORENO</h1>
+    <nav>
+      <ul class="menu-navegacion">
+        <li><a href="#seccion-1" class="enlace-interno">Inicio</a></li>
+        <li><a href="#seccion-2" class="enlace-interno">Sobre Nosotros</a></li>
+        <li><a href="#seccion-3" class="enlace-interno">Servicios</a></li>
+        <li><a href="#seccion-4" class="enlace-interno">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="seccion-1" class="seccion">
+      <h2>Inicio</h2>
+      <p>Esta es una <strong>página de ejemplo</strong> creada con <em>HTML5 y CSS3</em>. Aquí podemos ver diferentes elementos HTML como párrafos, encabezados, listas y más.</p>
+      <p class="destacado">Este párrafo tiene un estilo especial aplicado mediante una clase CSS.</p>
+    </section>
+
+    <section id="seccion-2" class="seccion">
+      <h2>Sobre Nosotros</h2>
+      <p>Somos un equipo dedicado a la <mark>creación de páginas web</mark> utilizando las últimas tecnologías.</p>
+      <div class="contenedor-imagen">
+        <img src="/img/pantalla.png" alt="Imagen de ejemplo" title="Imagen de muestra">
+        <figcaption>Figura 1: Imagen de ejemplo con atributos alt y title</figcaption>
+      </div>
+    </section>
+
+    <section id="seccion-3" class="seccion">
+      <h2>Servicios</h2>
+      <h3>Lista ordenada de servicios:</h3>
+      <ol class="lista-ordenada">
+        <li>Diseño web</li>
+        <li>Desarrollo frontend</li>
+        <li>Optimización SEO</li>
+        <li>Mantenimiento web</li>
+      </ol>
+
+      <h3>Lista desordenada de tecnologías:</h3>
+      <ul class="lista-desordenada">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Responsive Design</li>
+      </ul>
+    </section>
+
+    <section id="seccion-4" class="seccion">
+      <h2>Contacto</h2>
+      <p>Puedes contactarnos a través de nuestras redes sociales:</p>
+      <ul class="redes-sociales">
+        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="enlace-externo">Twitter</a></li>
+        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="enlace-externo">Facebook</a></li>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="enlace-externo">Instagram</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <aside class="barra-lateral">
+    <h3>Información adicional</h3>
+    <p>Esta barra lateral contiene información complementaria a la página principal.</p>
+    <blockquote cite="https://developer.mozilla.org">
+      <p>HTML5 y CSS3 son tecnologías fundamentales para el desarrollo web moderno.</p>
+    </blockquote>
+  </aside>
+
+  <footer class="pie-pagina">
+    <p>&copy; 2025 Mi Página Web. Todos los derechos reservados.</p>
+    <address>
+      Contacto: <a href="mailto:info@mipaginaweb.com">info@mipaginaweb.com</a>
+    </address>
+  </footer>
 </body>
 </html>
