@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de contacto con formulario y tabla de información">
+  <meta name="author" content="Kissmark Rivas Moreno">
+  <meta name="keywords" content="HTML5, CSS3, formulario, contacto, tabla responsive">
+  <title>Kissmark Rivas - Contacto</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>KISSMARK RIVAS MORENO</h1>
+    <nav>
+      <ul class="menu-navegacion">
+        <li><a href="index.html" class="enlace-interno">Inicio</a></li>
+        <li><a href="galeria.html" class="enlace-interno">Galería</a></li>
+        <li><a href="contacto.html" class="enlace-interno activo">Contacto</a></li>
+        <!-- <li><a href="index.html#seccion-servicios" class="enlace-interno">Servicios</a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <h2>Formulario de Contacto</h2>
+      <p>Completa el siguiente formulario para ponerte en contacto con nosotros. Todos los campos marcados con <span class="campo-obligatorio">*</span> son obligatorios.</p>
+      
+      <form class="formulario-contacto" action="#" method="post">
+        <div class="grupo-formulario">
+          <label for="nombre">Nombre completo <span class="campo-obligatorio">*</span></label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre completo">
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="email">Correo electrónico <span class="campo-obligatorio">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9,10}" placeholder="Número de teléfono (opcional)">
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="asunto">Asunto <span class="campo-obligatorio">*</span></label>
+          <select id="asunto" name="asunto" required>
+            <option value="">Selecciona una opción</option>
+            <option value="consulta">Consulta general</option>
+            <option value="presupuesto">Solicitud de presupuesto</option>
+            <option value="soporte">Soporte técnico</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="mensaje">Mensaje <span class="campo-obligatorio">*</span></label>
+          <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+        
+        <div class="grupo-formulario checkbox-grupo">
+          <input type="checkbox" id="terminos" name="terminos" required>
+          <label for="terminos">Acepto los términos y condiciones <span class="campo-obligatorio">*</span></label>
+        </div>
+        
+        <div class="grupo-formulario radio-grupo">
+          <p>¿Cómo prefieres que te contactemos?</p>
+          <div class="opciones-radio">
+            <input type="radio" id="contacto-email" name="preferencia-contacto" value="email" checked>
+            <label for="contacto-email">Email</label>
+          </div>
+          <div class="opciones-radio">
+            <input type="radio" id="contacto-telefono" name="preferencia-contacto" value="telefono">
+            <label for="contacto-telefono">Teléfono</label>
+          </div>
+        </div>
+        
+        <div class="grupo-formulario">
+          <button type="submit" class="boton-enviar">Enviar mensaje</button>
+          <button type="reset" class="boton-reset">Limpiar formulario</button>
+        </div>
+      </form>
+    </section>
+    
+    <section class="seccion">
+      <h2>Horarios de Atención</h2>
+      <div class="tabla-responsive">
+        <table class="tabla-horarios">
+          <caption>Horarios de atención al cliente</caption>
+          <thead>
+            <tr>
+              <th scope="col">Día</th>
+              <th scope="col">Mañana</th>
+              <th scope="col">Tarde</th>
+              <th scope="col">Disponibilidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Lunes</th>
+              <td>9:00 - 13:00</td>
+              <td>15:00 - 18:00</td>
+              <td class="disponible">Disponible</td>
+            </tr>
+            <tr>
+              <th scope="row">Martes</th>
+              <td>9:00 - 13:00</td>
+              <td>15:00 - 18:00</td>
+              <td class="disponible">Disponible</td>
+            </tr>
+            <tr>
+              <th scope="row">Miércoles</th>
+              <td>9:00 - 13:00</td>
+              <td>15:00 - 18:00</td>
+              <td class="disponible">Disponible</td>
+            </tr>
+            <tr>
+              <th scope="row">Jueves</th>
+              <td>9:00 - 13:00</td>
+              <td>15:00 - 18:00</td>
+              <td class="disponible">Disponible</td>
+            </tr>
+            <tr>
+              <th scope="row">Viernes</th>
+              <td>9:00 - 13:00</td>
+              <td>15:00 - 17:00</td>
+              <td class="disponible">Disponible</td>
+            </tr>
+            <tr>
+              <th scope="row">Sábado</th>
+              <td>10:00 - 13:00</td>
+              <td>Cerrado</td>
+              <td class="limitado">Disponibilidad limitada</td>
+            </tr>
+            <tr>
+              <th scope="row">Domingo</th>
+              <td colspan="2">Cerrado</td>
+              <td class="no-disponible">No disponible</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">Los horarios pueden variar en días festivos</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+    
+    <section class="seccion mapa-ubicacion">
+      <h2>Nuestra Ubicación</h2>
+      <p>Puedes encontrarnos en la siguiente dirección:</p>
+      <address class="direccion-fisica">
+        Jr Gregorio Paredes #123<br>
+        Lima, cercado de Lima<br>
+        Perú
+      </address>
+      <div class="contenedor-mapa">
+        <!-- Aquí iría un mapa embebido, pero por simplicidad usamos una imagen -->
+        <img src="img/pantalla.png" alt="Mapa de ubicación" class="imagen-mapa">
+      </div>
+    </section>
+  </main>
+
+  <aside class="barra-lateral">
+    <h3>Información de Contacto</h3>
+    <p>Puedes contactarnos directamente a través de:</p>
+    <ul class="info-contacto">
+      <li><strong>Email:</strong> rivaskissmark@gmail.com</li>
+      <li><strong>Teléfono:</strong> +51 947 438 767</li>
+      <li><strong>WhatsApp:</strong> +51 947 438 767</li>
+    </ul>
+    <div class="tiempo-respuesta">
+      <h4>Tiempo de respuesta</h4>
+      <p>Respondemos a todas las consultas en un plazo máximo de 24 horas laborables.</p>
+    </div>
+  </aside>
+
+  <footer class="pie-pagina">
+    <p>&copy; 2025 Kissmark Rivas. Todos los derechos reservados.</p>
+    <address>
+      Contacto: <a href="rivaskissmark@gmail.com">rivaskissmark@gmail.com</a>
+    </address>
+  </footer>
+</body>
+</html>

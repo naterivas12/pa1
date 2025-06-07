@@ -126,6 +126,132 @@ main {
 	border-radius: var(--borde-redondeado);
 	/* Uso de función CSS para filtros */
 	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+	transition: transform 0.3s ease;
+}
+
+.contenedor-imagen img:hover {
+	transform: scale(1.05);
+}
+
+/* Imágenes adaptativas */
+.imagen-adaptativa {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Imágenes con filtros */
+.filtro-sepia {
+	filter: sepia(80%);
+	transition: filter 0.3s ease;
+}
+
+.filtro-sepia:hover {
+	filter: sepia(0%);
+}
+
+.filtro-blur {
+	filter: blur(2px);
+	transition: filter 0.3s ease;
+}
+
+.filtro-blur:hover {
+	filter: blur(0);
+}
+
+.filtro-saturacion {
+	filter: saturate(200%);
+	transition: filter 0.3s ease;
+}
+
+.filtro-saturacion:hover {
+	filter: saturate(100%);
+}
+
+.filtro-contraste {
+	filter: contrast(150%);
+	transition: filter 0.3s ease;
+}
+
+.filtro-contraste:hover {
+	filter: contrast(100%);
+}
+
+/* Contenedor de filtros */
+.contenedor-filtros {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+	margin: 1rem 0;
+}
+
+.filtro-item {
+	text-align: center;
+	margin: 0;
+}
+
+.filtro-item img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--borde-redondeado);
+	box-shadow: var(--sombra-box);
+}
+
+/* SVG */
+.contenedor-svg {
+	text-align: center;
+	margin: 2rem 0;
+}
+
+.svg-animado {
+	background-color: #f5f5f5;
+	border-radius: var(--borde-redondeado);
+	box-shadow: var(--sombra-box);
+	padding: 1rem;
+}
+
+.svg-rect {
+	animation: cambio-color 4s infinite alternate;
+}
+
+.svg-circle {
+	animation: pulso 2s infinite alternate;
+}
+
+.svg-polygon {
+	animation: rotacion 3s infinite linear;
+	transform-origin: 150px 100px;
+}
+
+@keyframes cambio-color {
+	0% { fill: #3498db; }
+	50% { fill: #9b59b6; }
+	100% { fill: #2ecc71; }
+}
+
+@keyframes pulso {
+	0% { r: 40; }
+	100% { r: 50; }
+}
+
+@keyframes rotacion {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/* Imagen mapa */
+.contenedor-imagen-mapa {
+	text-align: center;
+	margin: 2rem 0;
+}
+
+.imagen-mapa {
+	max-width: 100%;
+	height: auto;
+	border: 2px solid var(--color-primario);
+	border-radius: var(--borde-redondeado);
+	cursor: pointer;
 }
 
 figcaption {
@@ -263,6 +389,104 @@ blockquote footer {
 	}
 }
 
+@keyframes rotacion {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@keyframes escala {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.1); }
+	100% { transform: scale(1); }
+}
+
+@keyframes traslacion {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(-10px); }
+	100% { transform: translateY(0); }
+}
+
+@keyframes cambio-color-fondo {
+	0% { background-color: var(--color-primario); }
+	50% { background-color: var(--color-secundario); }
+	100% { background-color: var(--color-primario); }
+}
+
+/* Sección de animaciones */
+.animaciones {
+	background-color: #f9f9f9;
+}
+
+.contenedor-animaciones {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+	margin: 2rem 0;
+}
+
+.caja-animada {
+	background-color: var(--color-primario);
+	color: white;
+	padding: 2rem;
+	border-radius: var(--borde-redondeado);
+	text-align: center;
+	box-shadow: var(--sombra-box);
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+
+.caja-rotacion {
+	animation: rotacion 5s infinite linear;
+}
+
+.caja-escala {
+	animation: escala 3s infinite ease-in-out;
+}
+
+.caja-traslacion {
+	animation: traslacion 2s infinite ease-in-out;
+}
+
+.caja-color {
+	animation: cambio-color-fondo 4s infinite alternate;
+}
+
+.nota-animaciones {
+	text-align: center;
+	margin-top: 2rem;
+	font-style: italic;
+	color: #666;
+}
+
+/* Enlaces rápidos */
+.enlaces-rapidos {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin: 1rem 0;
+	justify-content: center;
+}
+
+.boton-enlace {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	background-color: var(--color-primario);
+	color: white;
+	border-radius: var(--borde-redondeado);
+	text-decoration: none;
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.boton-enlace:hover {
+	background-color: var(--color-secundario);
+	transform: translateY(-3px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 mark {
 	background-color: rgba(231, 76, 60, 0.2);
 	padding: 0 0.2rem;
@@ -300,6 +524,241 @@ h2 + p {
 /* Uso de calc() para cálculos */
 .seccion {
 	min-height: calc(100px + 5vh);
+}
+
+/* Estilos para formularios */
+.formulario-contacto {
+	max-width: 800px;
+	margin: 2rem auto;
+	background-color: white;
+	padding: 2rem;
+	border-radius: var(--borde-redondeado);
+	box-shadow: var(--sombra-box);
+}
+
+.grupo-formulario {
+	margin-bottom: 1.5rem;
+}
+
+.grupo-formulario label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+	color: var(--color-texto);
+}
+
+.grupo-formulario input[type="text"],
+.grupo-formulario input[type="email"],
+.grupo-formulario input[type="tel"],
+.grupo-formulario select,
+.grupo-formulario textarea {
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid #ddd;
+	border-radius: var(--borde-redondeado);
+	font-family: inherit;
+	font-size: 1rem;
+	transition: border-color 0.3s ease;
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario select:focus,
+.grupo-formulario textarea:focus {
+	border-color: var(--color-primario);
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.checkbox-grupo,
+.radio-grupo {
+	display: flex;
+	align-items: flex-start;
+}
+
+.checkbox-grupo input,
+.opciones-radio input {
+	margin-right: 0.5rem;
+	margin-top: 0.25rem;
+}
+
+.opciones-radio {
+	display: flex;
+	align-items: center;
+	margin-right: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.radio-grupo p {
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+}
+
+.radio-grupo {
+	display: block;
+}
+
+.campo-obligatorio {
+	color: var(--color-acento);
+}
+
+.boton-enviar,
+.boton-reset {
+	padding: 0.75rem 1.5rem;
+	border: none;
+	border-radius: var(--borde-redondeado);
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.boton-enviar {
+	background-color: var(--color-secundario);
+	color: white;
+	margin-right: 1rem;
+}
+
+.boton-reset {
+	background-color: #f1f1f1;
+	color: var(--color-texto);
+}
+
+.boton-enviar:hover {
+	background-color: #27ae60;
+	transform: translateY(-2px);
+}
+
+.boton-reset:hover {
+	background-color: #e0e0e0;
+}
+
+/* Tabla responsive */
+.tabla-responsive {
+	overflow-x: auto;
+	margin: 2rem 0;
+	box-shadow: var(--sombra-box);
+	border-radius: var(--borde-redondeado);
+}
+
+.tabla-horarios {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: white;
+	border-radius: var(--borde-redondeado);
+	overflow: hidden;
+}
+
+.tabla-horarios caption {
+	padding: 1rem;
+	background-color: var(--color-primario);
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.tabla-horarios th,
+.tabla-horarios td {
+	padding: 1rem;
+	text-align: center;
+	border-bottom: 1px solid #eee;
+}
+
+.tabla-horarios th {
+	background-color: #f5f5f5;
+	font-weight: bold;
+	color: var(--color-primario);
+}
+
+.tabla-horarios tbody tr:hover {
+	background-color: rgba(52, 152, 219, 0.05);
+}
+
+.tabla-horarios tbody th {
+	text-align: left;
+}
+
+.disponible {
+	color: var(--color-secundario);
+	font-weight: bold;
+}
+
+.limitado {
+	color: #f39c12;
+	font-weight: bold;
+}
+
+.no-disponible {
+	color: var(--color-acento);
+	font-weight: bold;
+}
+
+.tabla-horarios tfoot td {
+	background-color: #f5f5f5;
+	font-style: italic;
+	color: #666;
+}
+
+/* Mapa y ubicación */
+.mapa-ubicacion {
+	text-align: center;
+}
+
+.direccion-fisica {
+	margin: 1rem 0;
+	font-style: normal;
+	line-height: 1.6;
+}
+
+.contenedor-mapa {
+	margin: 1.5rem 0;
+	border-radius: var(--borde-redondeado);
+	overflow: hidden;
+	box-shadow: var(--sombra-box);
+}
+
+.contenedor-mapa img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Info de contacto en barra lateral */
+.info-contacto {
+	list-style-type: none;
+	padding: 0;
+	margin: 1rem 0;
+}
+
+.info-contacto li {
+	margin-bottom: 0.75rem;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.info-contacto li::before {
+	content: '\2022';
+	position: absolute;
+	left: 0;
+	color: var(--color-primario);
+	font-size: 1.2em;
+}
+
+.tiempo-respuesta {
+	margin-top: 2rem;
+	padding: 1rem;
+	background-color: rgba(46, 204, 113, 0.1);
+	border-left: 3px solid var(--color-secundario);
+	border-radius: 0 var(--borde-redondeado) var(--borde-redondeado) 0;
+}
+
+.tiempo-respuesta h4 {
+	margin-top: 0;
+	color: var(--color-secundario);
+}
+
+/* Mejoras para navegación */
+.enlace-interno.activo {
+	background-color: rgba(255, 255, 255, 0.3);
+	font-weight: bold;
 }
 
 /* Uso de variables CSS con fallback */

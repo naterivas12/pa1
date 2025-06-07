@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kissmark Rivas</title>
+  <meta name="description" content="Sitio web de Kissmark Rivas con elementos avanzados de HTML5 y CSS3">
+  <meta name="author" content="Kissmark Rivas Moreno">
+  <meta name="keywords" content="HTML5, CSS3, diseño web, responsive">
+  <title>Kissmark Rivas - Inicio</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 </head>
 <body>
   <header class="encabezado">
     <h1>KISSMARK RIVAS MORENO</h1>
     <nav>
       <ul class="menu-navegacion">
-        <li><a href="#seccion-1" class="enlace-interno">Inicio</a></li>
-        <li><a href="#seccion-2" class="enlace-interno">Sobre Nosotros</a></li>
-        <li><a href="#seccion-3" class="enlace-interno">Servicios</a></li>
-        <li><a href="#seccion-4" class="enlace-interno">Contacto</a></li>
+        <li><a href="index.html" class="enlace-interno activo">Inicio</a></li>
+        <li><a href="galeria.html" class="enlace-interno">Galería</a></li>
+        <li><a href="contacto.html" class="enlace-interno">Contacto</a></li>
+        <!-- <li><a href="#seccion-servicios" class="enlace-interno">Servicios</a></li> -->
       </ul>
     </nav>
   </header>
@@ -29,13 +33,17 @@
     <section id="seccion-2" class="seccion">
       <h2>Sobre Nosotros</h2>
       <p>Somos un equipo dedicado a la <mark>creación de páginas web</mark> utilizando las últimas tecnologías.</p>
-      <div class="contenedor-imagen">
-        <img src="/img/pantalla.png" alt="Imagen de ejemplo" title="Imagen de muestra">
-        <figcaption>Figura 1: Imagen de ejemplo con atributos alt y title</figcaption>
-      </div>
+      <figure class="contenedor-imagen">
+        <picture>
+          <source media="(max-width: 768px)" srcset="img/pantalla.png 768w">
+          <source media="(min-width: 769px)" srcset="img/pantalla.png 1200w">
+          <img src="img/pantalla.png" alt="Imagen de ejemplo" title="Imagen de muestra" class="imagen-adaptativa">
+        </picture>
+        <figcaption>Figura 1: Imagen adaptativa con picture y srcset</figcaption>
+      </figure>
     </section>
 
-    <section id="seccion-3" class="seccion">
+    <section id="seccion-servicios" class="seccion">
       <h2>Servicios</h2>
       <h3>Lista ordenada de servicios:</h3>
       <ol class="lista-ordenada">
@@ -55,8 +63,13 @@
     </section>
 
     <section id="seccion-4" class="seccion">
-      <h2>Contacto</h2>
-      <p>Puedes contactarnos a través de nuestras redes sociales:</p>
+      <h2>Enlaces Rápidos</h2>
+      <p>Visita nuestras otras páginas para más información:</p>
+      <div class="enlaces-rapidos">
+        <a href="galeria.html" class="boton-enlace">Ver nuestra galería</a>
+        <a href="contacto.html" class="boton-enlace">Contacta con nosotros</a>
+      </div>
+      <p>También puedes seguirnos en nuestras redes sociales:</p>
       <ul class="redes-sociales">
         <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="enlace-externo">Twitter</a></li>
         <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="enlace-externo">Facebook</a></li>
@@ -76,7 +89,7 @@
   <footer class="pie-pagina">
     <p>&copy; 2025 Mi Página Web. Todos los derechos reservados.</p>
     <address>
-      Contacto: <a href="mailto:info@mipaginaweb.com">info@mipaginaweb.com</a>
+      Contacto: <a href="rivaskissmark@gmail.com">rivaskissmark@gmail.com</a>
     </address>
   </footer>
 </body>
