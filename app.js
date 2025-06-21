@@ -82,7 +82,7 @@ function mostrarProductos(productosAMostrar) {
         productoElement.innerHTML = `
             <img src="${producto.imagen}" alt="${producto.nombre}">
             <h3>${producto.nombre}</h3>
-            <p class="precio">$${producto.precio.toFixed(2)}</p>
+            <p class="precio">S/.${producto.precio.toFixed(2)}</p>
             <p class="descripcion">${producto.descripcion}</p>
             <button class="btn-agregar" data-id="${producto.id}">Agregar al Carrito</button>
         `;
@@ -195,7 +195,7 @@ function actualizarCarrito() {
             <img src="${item.imagen}" alt="${item.nombre}">
             <div class="item-detalles">
                 <h4>${item.nombre}</h4>
-                <p>$${item.precio.toFixed(2)}</p>
+                <p>S/.${item.precio.toFixed(2)}</p>
                 <div class="item-cantidad">
                     <button class="btn-cantidad restar" data-id="${item.id}">-</button>
                     <span>${item.cantidad}</span>

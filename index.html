@@ -34,7 +34,7 @@
 		<div class="carrito-panel">
 			<div class="carrito-header">
 				<h2>Tu Carrito</h2>
-				<button class="cerrar-carrito">&times;</button>
+				<button class="cerrar-carrito" aria-label="Cerrar carrito">&times;</button>
 			</div>
 			<div class="carrito-items">
 				<!-- Los items del carrito se agregarán dinámicamente aquí -->
@@ -44,8 +44,14 @@
 					<span>Total:</span>
 					<span class="total-precio">$0.00</span>
 				</div>
-				<button class="btn-comprar">Realizar Compra</button>
-				<button class="btn-vaciar">Vaciar Carrito</button>
+				<div class="carrito-botones">
+					<button class="btn-comprar">
+						<i class="fas fa-check-circle"></i> Realizar Compra
+					</button>
+					<button class="btn-vaciar">
+						<i class="fas fa-trash-alt"></i> Vaciar Carrito
+					</button>
+				</div>
 			</div>
 		</div>
 
