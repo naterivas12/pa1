@@ -1,96 +1,214 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sitio web de Kissmark Rivas con elementos avanzados de HTML5 y CSS3">
-  <meta name="author" content="Kissmark Rivas Moreno">
-  <meta name="keywords" content="HTML5, CSS3, diseño web, responsive">
-  <title>Kissmark Rivas - Inicio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-</head>
-<body>
-  <header class="encabezado">
-    <h1>KISSMARK RIVAS MORENO</h1>
-    <nav>
-      <ul class="menu-navegacion">
-        <li><a href="index.html" class="enlace-interno activo">Inicio</a></li>
-        <li><a href="galeria.html" class="enlace-interno">Galería</a></li>
-        <li><a href="contacto.html" class="enlace-interno">Contacto</a></li>
-        <!-- <li><a href="#seccion-servicios" class="enlace-interno">Servicios</a></li> -->
-      </ul>
-    </nav>
-  </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>KissmarkStore - Tienda en línea</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1>KissmarkStore</h1>
+				<nav>
+					<ul>
+						<li><a href="#inicio">Inicio</a></li>
+						<li><a href="#productos">Productos</a></li>
+						<li><a href="#nosotros">Nosotros</a></li>
+						<li><a href="#contacto">Contacto</a></li>
+					</ul>
+				</nav>
+				<div class="carrito-icon">
+					<i class="fas fa-shopping-cart"></i>
+					<span class="contador-carrito">0</span>
+				</div>
+			</div>
+		</header>
 
-  <main>
-    <section id="seccion-1" class="seccion">
-      <h2>Inicio</h2>
-      <p>Esta es una <strong>página de ejemplo</strong> creada con <em>HTML5 y CSS3</em>. Aquí podemos ver diferentes elementos HTML como párrafos, encabezados, listas y más.</p>
-      <p class="destacado">Este párrafo tiene un estilo especial aplicado mediante una clase CSS.</p>
-    </section>
+		<div class="carrito-panel">
+			<div class="carrito-header">
+				<h2>Tu Carrito</h2>
+				<button class="cerrar-carrito">&times;</button>
+			</div>
+			<div class="carrito-items">
+				<!-- Los items del carrito se agregarán dinámicamente aquí -->
+			</div>
+			<div class="carrito-footer">
+				<div class="total">
+					<span>Total:</span>
+					<span class="total-precio">$0.00</span>
+				</div>
+				<button class="btn-comprar">Realizar Compra</button>
+				<button class="btn-vaciar">Vaciar Carrito</button>
+			</div>
+		</div>
 
-    <section id="seccion-2" class="seccion">
-      <h2>Sobre Nosotros</h2>
-      <p>Somos un equipo dedicado a la <mark>creación de páginas web</mark> utilizando las últimas tecnologías.</p>
-      <figure class="contenedor-imagen">
-        <picture>
-          <source media="(max-width: 768px)" srcset="img/pantalla.png 768w">
-          <source media="(min-width: 769px)" srcset="img/pantalla.png 1200w">
-          <img src="img/pantalla.png" alt="Imagen de ejemplo" title="Imagen de muestra" class="imagen-adaptativa">
-        </picture>
-        <figcaption>Figura 1: Imagen adaptativa con picture y srcset</figcaption>
-      </figure>
-    </section>
+		<main>
+			<section id="inicio" class="hero">
+				<div class="container">
+					<div class="hero-content">
+						<h2>Las mejores ofertas en tecnología</h2>
+						<p>
+							Descubre nuestra selección de productos tecnológicos de alta
+							calidad
+						</p>
+						<a href="#productos" class="btn">Ver Productos</a>
+					</div>
+				</div>
+			</section>
 
-    <section id="seccion-servicios" class="seccion">
-      <h2>Servicios</h2>
-      <h3>Lista ordenada de servicios:</h3>
-      <ol class="lista-ordenada">
-        <li>Diseño web</li>
-        <li>Desarrollo frontend</li>
-        <li>Optimización SEO</li>
-        <li>Mantenimiento web</li>
-      </ol>
+			<section id="productos" class="productos">
+				<div class="container">
+					<h2>Nuestros Productos</h2>
+					<div class="filtros">
+						<button class="btn-filtro activo" data-categoria="todos">
+							Todos
+						</button>
+						<button class="btn-filtro" data-categoria="laptops">Laptops</button>
+						<button class="btn-filtro" data-categoria="smartphones">
+							Smartphones
+						</button>
+						<button class="btn-filtro" data-categoria="accesorios">
+							Accesorios
+						</button>
+					</div>
+					<div class="productos-grid">
+						<!-- Los productos se agregarán dinámicamente aquí -->
+					</div>
+				</div>
+			</section>
 
-      <h3>Lista desordenada de tecnologías:</h3>
-      <ul class="lista-desordenada">
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-        <li>Responsive Design</li>
-      </ul>
-    </section>
+			<section id="nosotros" class="nosotros">
+				<div class="container">
+					<h2>Sobre Nosotros</h2>
+					<div class="nosotros-content">
+						<div class="nosotros-text">
+							<p>
+								KissmarkStore es tu tienda de confianza para adquirir los
+								mejores productos tecnológicos. Nos especializamos en ofrecer
+								dispositivos de alta calidad a precios competitivos.
+							</p>
+							<p>
+								Nuestro equipo está formado por expertos en tecnología que
+								pueden asesorarte en tu compra para que encuentres exactamente
+								lo que necesitas.
+							</p>
+						</div>
+						<div class="nosotros-stats">
+							<div class="stat">
+								<span class="stat-numero">5+</span>
+								<span class="stat-texto">Años de experiencia</span>
+							</div>
+							<div class="stat">
+								<span class="stat-numero">1000+</span>
+								<span class="stat-texto">Clientes satisfechos</span>
+							</div>
+							<div class="stat">
+								<span class="stat-numero">500+</span>
+								<span class="stat-texto">Productos</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <section id="seccion-4" class="seccion">
-      <h2>Enlaces Rápidos</h2>
-      <p>Visita nuestras otras páginas para más información:</p>
-      <div class="enlaces-rapidos">
-        <a href="galeria.html" class="boton-enlace">Ver nuestra galería</a>
-        <a href="contacto.html" class="boton-enlace">Contacta con nosotros</a>
-      </div>
-      <p>También puedes seguirnos en nuestras redes sociales:</p>
-      <ul class="redes-sociales">
-        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="enlace-externo">Twitter</a></li>
-        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="enlace-externo">Facebook</a></li>
-        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="enlace-externo">Instagram</a></li>
-      </ul>
-    </section>
-  </main>
+			<section id="contacto" class="contacto">
+				<div class="container">
+					<h2>Contáctanos</h2>
+					<div class="contacto-content">
+						<form id="formulario-contacto">
+							<div class="form-group">
+								<label for="nombre">Nombre</label>
+								<input type="text" id="nombre" name="nombre" required />
+								<span class="error-mensaje"></span>
+							</div>
+							<div class="form-group">
+								<label for="email">Correo Electrónico</label>
+								<input type="email" id="email" name="email" required />
+								<span class="error-mensaje"></span>
+							</div>
+							<div class="form-group">
+								<label for="mensaje">Mensaje</label>
+								<textarea
+									id="mensaje"
+									name="mensaje"
+									rows="5"
+									required
+								></textarea>
+								<span class="error-mensaje"></span>
+							</div>
+							<button type="submit" class="btn">Enviar Mensaje</button>
+						</form>
+						<div class="contacto-info">
+							<div class="info-item">
+								<i class="fas fa-map-marker-alt"></i>
+								<p>Av. Tecnología 123, Ciudad Digital</p>
+							</div>
+							<div class="info-item">
+								<i class="fas fa-phone"></i>
+								<p>+123 456 7890</p>
+							</div>
+							<div class="info-item">
+								<i class="fas fa-envelope"></i>
+								<p>info@KissmarkStore.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
-  <aside class="barra-lateral">
-    <h3>Información adicional</h3>
-    <p>Esta barra lateral contiene información complementaria a la página principal.</p>
-    <blockquote cite="https://developer.mozilla.org">
-      <p>HTML5 y CSS3 son tecnologías fundamentales para el desarrollo web moderno.</p>
-    </blockquote>
-  </aside>
+		<footer>
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-logo">
+						<h2>KissmarkStore</h2>
+						<p>Tu tienda de tecnología de confianza</p>
+					</div>
+					<div class="footer-links">
+						<h3>Enlaces Rápidos</h3>
+						<ul>
+							<li><a href="#inicio">Inicio</a></li>
+							<li><a href="#productos">Productos</a></li>
+							<li><a href="#nosotros">Nosotros</a></li>
+							<li><a href="#contacto">Contacto</a></li>
+						</ul>
+					</div>
+					<div class="footer-social">
+						<h3>Síguenos</h3>
+						<div class="social-icons">
+							<a href="#"><i class="fab fa-facebook"></i></a>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a href="#"><i class="fab fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>&copy; 2025 KissmarkStore. Todos los derechos reservados.</p>
+				</div>
+			</div>
+		</footer>
 
-  <footer class="pie-pagina">
-    <p>&copy; 2025 Mi Página Web. Todos los derechos reservados.</p>
-    <address>
-      Contacto: <a href="rivaskissmark@gmail.com">rivaskissmark@gmail.com</a>
-    </address>
-  </footer>
-</body>
+		<div class="overlay"></div>
+		<div class="modal" id="modal-compra">
+			<div class="modal-content">
+				<span class="cerrar-modal">&times;</span>
+				<h2>¡Compra Exitosa!</h2>
+				<p>
+					Gracias por tu compra. Recibirás un correo con los detalles de tu
+					pedido.
+				</p>
+				<button class="btn-modal-ok">Aceptar</button>
+			</div>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
 </html>
